@@ -1,142 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agent Evolution System</title>
+<title>Mindflow — Team & Evolution</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #0d1117;
-    color: #c9d1d9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-  }
-  h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #e6edf3;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-  }
-  .subtitle {
-    color: #8b949e;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-  }
-  .diagram-container {
-    max-width: 1200px;
-    width: 100%;
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 1.5rem;
-    overflow-x: auto;
-    position: relative;
-  }
-  .diagram-container img,
-  .diagram-container svg {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .diagram-container object {
-    width: 100%;
-    height: auto;
-    display: block;
-    min-height: 600px;
-  }
-  .edit-link {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background: #21262d;
-    border: 1px solid #30363d;
-    color: #8b949e;
-    padding: 0.35rem 0.75rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.75rem;
-    transition: all 0.2s;
-  }
-  .edit-link:hover {
-    background: #30363d;
-    color: #e6edf3;
-  }
-  .legend {
-    max-width: 1200px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  .legend-card {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    padding: 1rem;
-  }
-  .legend-card h3 {
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-  }
-  .legend-card p {
-    font-size: 0.8rem;
-    color: #8b949e;
-    line-height: 1.4;
-  }
-  .red { color: #e94560; }
-  .blue { color: #4dabf7; }
-  .purple { color: #da77f2; }
-  .teal { color: #53a8b6; }
-  footer {
-    margin-top: 3rem;
-    color: #484f58;
-    font-size: 0.75rem;
-  }
-  footer a { color: #484f58; }
+body{margin:0;background:#0f1117;color:#e1e4eb;font-family:-apple-system,sans-serif}
+nav{padding:1rem 2rem;display:flex;gap:1.5rem;border-bottom:1px solid #2a2e3d}
+nav a{color:#818cf8;text-decoration:none;font-size:.9rem;font-weight:500}
+nav a:hover{color:#a5b4fc}
+nav a.active{color:#e1e4eb;border-bottom:2px solid #6366f1;padding-bottom:4px}
+.frame{width:100%;height:calc(100vh - 60px);border:none}
 </style>
-</head>
-<body>
-  <h1>Agent Evolution System</h1>
-  <p class="subtitle">Two engines, one shared brain. Capability Evolver + Agent Growth Engine via SynapseNet.</p>
-
-  <div class="diagram-container">
-    <a class="edit-link" href="https://excalidraw.com/#json=https://evolution.tiessen.me/evolution-system.excalidraw" target="_blank" rel="noopener">Open in Excalidraw</a>
-    <object data="diagram.svg" type="image/svg+xml">
-      <img src="diagram.png" alt="Agent Evolution System diagram">
-    </object>
-  </div>
-
-  <div class="legend">
-    <div class="legend-card">
-      <h3 class="red">Capability Evolver</h3>
-      <p>7am + 7pm daily. Scans code patterns, mutates and tests, solidifies changes. Optimizes internal plumbing: exec caching, file I/O, skill files.</p>
-    </div>
-    <div class="legend-card">
-      <h3 class="blue">Agent Growth Engine</h3>
-      <p>9am + 9pm daily. Self-reflects on corrections, gaps, missed opportunities. Writes behavioral proposals targeting SOUL.md, MEMORY.md, HEARTBEAT.md.</p>
-    </div>
-    <div class="legend-card">
-      <h3 class="purple">SynapseNet :7700</h3>
-      <p>Shared memory bus. Growth proposals written to "growth" channel. Staggered: Rowan 9:00, Finn 9:10, Sage 9:20, Atlas 9:30. Each reads predecessors first.</p>
-    </div>
-    <div class="legend-card">
-      <h3 class="teal">Rowan Reviews</h3>
-      <p>HIGH (Jason corrections) auto-applied. MEDIUM reviewed then applied. LOW queued for weekly. Cross-pollinated insights adapted to receiving agent.</p>
-    </div>
-  </div>
-
-  <footer>
-    Mindflow Agent Team. Updated March 2026. 
-    <a href="https://github.com/RowanBeck/evolution">Source</a> |
-    <a href="evolution-system.excalidraw" download>Download Excalidraw</a>
-  </footer>
-</body>
-</html>
+</head><body>
+<nav>
+  <a href="#" onclick="show('org')" id="nav-org" class="active">Org Chart</a>
+  <a href="#" onclick="show('evo')" id="nav-evo">Evolution System</a>
+</nav>
+<img id="org" src="org-chart.svg" style="max-width:100%;padding:2rem;display:block;margin:0 auto" alt="Org Chart">
+<img id="evo" src="diagram.svg" style="max-width:100%;padding:2rem;display:none;margin:0 auto" alt="Evolution System">
+<script>
+function show(id){
+  document.getElementById('org').style.display = id==='org' ? 'block' : 'none';
+  document.getElementById('evo').style.display = id==='evo' ? 'block' : 'none';
+  document.getElementById('nav-org').className = id==='org' ? 'active' : '';
+  document.getElementById('nav-evo').className = id==='evo' ? 'active' : '';
+}
+</script>
+</body></html>
