@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Evolution System</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .subtitle {
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  .diagram-container {
+    max-width: 1200px;
+    width: 100%;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+  }
+  .diagram-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .legend {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .legend-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  .legend-card h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .legend-card p {
+    font-size: 0.8rem;
+    color: #8b949e;
+    line-height: 1.4;
+  }
+  .red { color: #e94560; }
+  .blue { color: #4dabf7; }
+  .purple { color: #da77f2; }
+  .teal { color: #53a8b6; }
+  footer {
+    margin-top: 3rem;
+    color: #484f58;
+    font-size: 0.75rem;
+  }
+</style>
+</head>
+<body>
+  <h1>Agent Evolution System</h1>
+  <p class="subtitle">Two engines, one shared brain. Capability Evolver + Agent Growth Engine via SynapseNet.</p>
+
+  <div class="diagram-container">
+    <img src="diagram.png" alt="Agent Evolution System diagram showing Capability Evolver, Growth Engine, SynapseNet coordination, and Rowan review flow">
+  </div>
+
+  <div class="legend">
+    <div class="legend-card">
+      <h3 class="red">Capability Evolver</h3>
+      <p>7am + 7pm daily. Scans code patterns, mutates and tests, solidifies changes. Optimizes internal plumbing: exec caching, file I/O, skill files.</p>
+    </div>
+    <div class="legend-card">
+      <h3 class="blue">Agent Growth Engine</h3>
+      <p>9am + 9pm daily. Self-reflects on corrections, gaps, missed opportunities. Writes behavioral proposals targeting SOUL.md, MEMORY.md, HEARTBEAT.md.</p>
+    </div>
+    <div class="legend-card">
+      <h3 class="purple">SynapseNet :7700</h3>
+      <p>Shared memory bus. Growth proposals written to "growth" channel. Staggered schedule: Rowan 9:00, Finn 9:10, Sage 9:20, Atlas 9:30. Each reads predecessors before reflecting.</p>
+    </div>
+    <div class="legend-card">
+      <h3 class="teal">Rowan Reviews</h3>
+      <p>HIGH (Jason corrections) auto-applied. MEDIUM reviewed then applied. LOW queued for weekly. Cross-pollinated insights adapted to receiving agent.</p>
+    </div>
+  </div>
+
+  <footer>Mindflow Agent Team. Updated March 2026.</footer>
+</body>
+</html>
