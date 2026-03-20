@@ -36,11 +36,36 @@
     border-radius: 8px;
     padding: 1.5rem;
     overflow-x: auto;
+    position: relative;
   }
-  .diagram-container img {
+  .diagram-container img,
+  .diagram-container svg {
     width: 100%;
     height: auto;
     display: block;
+  }
+  .diagram-container object {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 600px;
+  }
+  .edit-link {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+  }
+  .edit-link:hover {
+    background: #30363d;
+    color: #e6edf3;
   }
   .legend {
     max-width: 1200px;
@@ -75,6 +100,7 @@
     color: #484f58;
     font-size: 0.75rem;
   }
+  footer a { color: #484f58; }
 </style>
 </head>
 <body>
@@ -82,7 +108,10 @@
   <p class="subtitle">Two engines, one shared brain. Capability Evolver + Agent Growth Engine via SynapseNet.</p>
 
   <div class="diagram-container">
-    <img src="diagram.png" alt="Agent Evolution System diagram showing Capability Evolver, Growth Engine, SynapseNet coordination, and Rowan review flow">
+    <a class="edit-link" href="https://excalidraw.com/#json=https://evolution.tiessen.me/evolution-system.excalidraw" target="_blank" rel="noopener">Open in Excalidraw</a>
+    <object data="diagram.svg" type="image/svg+xml">
+      <img src="diagram.png" alt="Agent Evolution System diagram">
+    </object>
   </div>
 
   <div class="legend">
@@ -96,7 +125,7 @@
     </div>
     <div class="legend-card">
       <h3 class="purple">SynapseNet :7700</h3>
-      <p>Shared memory bus. Growth proposals written to "growth" channel. Staggered schedule: Rowan 9:00, Finn 9:10, Sage 9:20, Atlas 9:30. Each reads predecessors before reflecting.</p>
+      <p>Shared memory bus. Growth proposals written to "growth" channel. Staggered: Rowan 9:00, Finn 9:10, Sage 9:20, Atlas 9:30. Each reads predecessors first.</p>
     </div>
     <div class="legend-card">
       <h3 class="teal">Rowan Reviews</h3>
@@ -104,6 +133,10 @@
     </div>
   </div>
 
-  <footer>Mindflow Agent Team. Updated March 2026.</footer>
+  <footer>
+    Mindflow Agent Team. Updated March 2026. 
+    <a href="https://github.com/RowanBeck/evolution">Source</a> |
+    <a href="evolution-system.excalidraw" download>Download Excalidraw</a>
+  </footer>
 </body>
 </html>
