@@ -1,0 +1,56 @@
+flowchart TD
+    subgraph EVOLVER["CAPABILITY EVOLVER · 7am + 7pm"]
+        E1[Scan Code Patterns] --> E2[Mutate + Test]
+        E2 --> E3[Solidify Changes]
+        E3 --> E4["Output: Skill File Changes<br/>(exec caching, I/O opts)"]
+    end
+
+    subgraph GROWTH["AGENT GROWTH ENGINE · 9am + 9pm"]
+        G0["Step 1: Read Team Learnings<br/>from SynapseNet growth channel"]
+        G0 --> G1["Step 2: Self-Reflect<br/>Read logs, corrections, gaps"]
+        G1 --> G2["Step 3: Cross-Pollinate<br/>Does a teammate's lesson apply to me?"]
+        G2 --> G3["Step 4: Write Proposals<br/>to SynapseNet + local queue"]
+    end
+
+    subgraph SYNAPSE["SYNAPSENET :7700 — growth channel"]
+        S1["Rowan proposals"]
+        S2["Finn proposals"]
+        S3["Sage proposals"]
+        S4["Atlas proposals"]
+    end
+
+    subgraph STAGGER["STAGGERED REVIEW CYCLE"]
+        direction LR
+        R["9:00 Rowan"] --> F["9:10 Finn"]
+        F --> SA["9:20 Sage"]
+        SA --> AT["9:30 Atlas"]
+    end
+
+    G3 --> SYNAPSE
+    SYNAPSE --> G0
+
+    subgraph REVIEW["ROWAN REVIEWS · During Heartbeat"]
+        RV1{"Severity?"}
+        RV1 -->|HIGH| RV2["Auto-apply"]
+        RV1 -->|MEDIUM| RV3["Review + apply"]
+        RV1 -->|LOW| RV4["Queue for weekly"]
+    end
+
+    SYNAPSE --> REVIEW
+
+    subgraph OUTPUT["APPLIED CHANGES"]
+        O1["SOUL.md — New rules"]
+        O2["MEMORY.md — Knowledge"]
+        O3["HEARTBEAT.md — Routines"]
+        O4["Domain files — Expertise"]
+    end
+
+    REVIEW --> OUTPUT
+    OUTPUT --> |"Compounds over time"| RESULT["Week 1: Fix gaps · Week 4: Anticipate · Week 12: Different team"]
+
+    style EVOLVER fill:#1a1a2e,stroke:#e94560,color:#fff
+    style GROWTH fill:#1a1a2e,stroke:#0f3460,color:#fff
+    style SYNAPSE fill:#16213e,stroke:#533483,color:#fff
+    style REVIEW fill:#1a1a2e,stroke:#e94560,color:#fff
+    style OUTPUT fill:#0f3460,stroke:#53a8b6,color:#fff
+    style RESULT fill:#533483,stroke:#e94560,color:#fff
